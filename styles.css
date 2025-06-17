@@ -31,6 +31,10 @@ body {
   width: 100%; /* Ensure input takes full available width in its flex container */
 }
 
+.form-control:focus {
+  box-shadow: none;
+}
+
 /* Styling for the search button */
 .search-btn {
   border-radius: 50px; 
