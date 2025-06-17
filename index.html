@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Bootstrap CSS for responsive design and UI components -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for weather icons and other glyphs -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container py-5">
+        <section class="weather-card p-4 mb-4 mx-auto" style="max-width: 800px;">
+            <h1 class="text-center mb-4">
+                <i class="fas fa-cloud-sun me-2"></i>Weather App
+            </h1>
+            
+            <div class="input-group mb-4">
+                <input type="text" class="form-control search-input" id="cityInput" 
+                       placeholder="Enter city name..." onkeypress="handleKeyPress(event)">
+
+                <button class="btn search-btn text-white" onclick="searchWeather()">
+                    <i class="fas fa-search"></i> <!-- Search icon -->
+                </button>
+
+                <button class="btn current-location-btn ms-2" onclick="getCurrentLocation()">
+                    <i class="fas fa-location-arrow"></i> <!-- Location arrow icon -->
+                </button>
+            </div>
+            
+            <!-- Loading Spinner: Displayed when data is being fetched -->
+            <div class="loading justify-content-center align-items-center py-5" id="loading">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span> <!-- Accessible text for screen readers -->
+                </div>
+                <span class="ms-2">Loading weather data...</span>
+            </div>
+            
+            <!-- Error Message: Displayed if there's an issue fetching data -->
+            <p class="error-message" id="errorMessage"></p>
+            
+            <!-- Weather Display Section: <article> for semantic grouping of weather details -->
+            <article id="weatherDisplay" style="display: none;">
+                <header class="text-center mb-4 fade-in">
+                    <h2 id="cityName" class="mb-2"></h2>
+                    <p id="currentDate" class="text-muted"></p>
+
+                    <div class="weather-icon">
+                        <i id="weatherIcon" class="fas fa-sun text-warning"></i>
+                        <!-- Weather condition icon -->
+                    </div>
+
+                    <p class="temp-display" id="temperature">--°</p>
+                    <p id="weatherDescription" class="h5 text-muted"></p>
+                </header>
+
+                <!-- List item for Visibility -->
+                <ul class="row g-3 mb-4 list-unstyled">
+                    <li class="col-6">
+                        <div class="weather-info d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-eye me-2"></i>Visibility</span>
+                            <span id="visibility">-- km</span>
+                        </div>
+                    </li>
+
+                    <!-- List item for Humidity -->
+                    <li class="col-6">
+                        <div class="weather-info d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-tint me-2"></i>Humidity</span>
+                            <span id="humidity">--%</span>
+                        </div>
+                    </li>
+
+                    <!-- List item for Wind Speed -->
+                    <li class="col-6">
+                        <div class="weather-info d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-wind me-2"></i>Wind Speed</span>
+                            <span id="windSpeed">-- km/h</span>
+                        </div>
+                    </li>
+
+                    <!-- List item for Feels Like temperature -->
+                    <li class="col-6">
+                        <div class="weather-info d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-thermometer-half me-2"></i>Feels Like</span>
+                            <span id="feelsLike">--°</span>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
