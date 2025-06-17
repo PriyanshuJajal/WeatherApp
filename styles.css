@@ -1,0 +1,133 @@
+body {
+  /* Linear gradient background for a modern look */
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  min-height: 100vh; /* Ensures the gradient covers the full viewport height, adapting to height changes */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
+  font-size: 1rem;
+}
+
+/* Styling for the main weather card container */
+.weather-card {
+  background: rgba(255, 255, 255, 0.95); 
+  backdrop-filter: blur(10px);/* Blurs content behind the card for a frosted glass effect */
+  border-radius: 20px; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the weather card */
+.weather-card:hover {
+  transform: translateY(-5px); /* Lifts the card slightly on hover */
+}
+
+/* Styling for the search input field */
+.search-input {
+  border-radius: 50px;
+  border: none; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  padding: 15px 25px; 
+  font-size: 16px; 
+  width: 100%; /* Ensure input takes full available width in its flex container */
+}
+
+/* Styling for the search button */
+.search-btn {
+  border-radius: 50px; 
+  padding: 12px 25px; 
+  border: none; 
+  background: linear-gradient(
+    45deg,
+    #00b894,
+    #00cec9
+  ); /* Green-blue gradient */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  white-space: nowrap; /* Prevents text from wrapping on small screens */
+}
+
+/* Hover effect for the search button */
+.search-btn:hover {
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
+  box-shadow: 0 4px 15px rgba(0, 184, 148, 0.4); /* Adds a stronger shadow on hover */
+}
+
+/* Styling for the temperature display text */
+.temp-display {
+  font-size: 4rem; /* Large font size for prominent temperature, scales responsively */
+  font-weight: 300; 
+  color: #2d3436; 
+}
+
+/* Styling for the weather icon */
+.weather-icon {
+  font-size: 3rem; /* Large icon size, scales responsively */
+  margin-bottom: 20px; 
+}
+
+/* Styling for individual weather information boxes (humidity, wind, etc.) */
+.weather-info {
+  background: linear-gradient(
+    45deg,
+    #fd79a8,
+    #fdcb6e
+  ); /* Pink-orange gradient */
+  border-radius: 15px; 
+  padding: 20px;
+  margin: 10px 0; /* Vertical margin */
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow for readability */
+}
+
+/* Loading spinner container styling */
+.loading {
+  display: none; /* Hidden by default */
+}
+
+/* Class to show the loading spinner */
+.loading.show {
+  display: flex; /* Displays as a flex container when active */
+}
+
+/* Styling for the error message display */
+.error-message {
+  background: rgba(255, 107, 107, 0.9); /* Semi-transparent red background */
+  color: white; 
+  padding: 15px; 
+  border-radius: 10px; 
+  margin: 20px 0; /* Vertical margin */
+  display: none; /* Hidden by default */
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } /* Starts invisible and slightly lower */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } /* Ends fully visible and in place */
+}
+
+/* Class to apply the fade-in animation */
+.fade-in {
+  animation: fadeIn 0.6s ease-out; 
+}
+
+/* Styling for the current location button */
+.current-location-btn {
+  background: linear-gradient(45deg, #6c5ce7, #a29bfe); /* Purple gradient */
+  border: none; 
+  border-radius: 50px; 
+  padding: 10px 20px; /* Padding for button size */
+  color: white;
+  transition: all 0.3s ease; 
+  white-space: nowrap; 
+}
+
+/* Hover effect for the current location button */
+.current-location-btn:hover {
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4); /* Adds a stronger shadow on hover */
+}
