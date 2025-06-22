@@ -1,5 +1,5 @@
 # ☁️ Fully Functional Weather App
-This is a clean, responsive web application that displays current weather conditions for any city worldwide, powered by the Open-Meteo API.
+This is a clean, responsive web application that displays current weather conditions for any city or country worldwide, powered by the Open-Meteo API.
 
 # ✨ Features
 1. Current Weather Display: Get real-time temperature, "feels like" temperature, humidity, wind speed, and estimated visibility.
